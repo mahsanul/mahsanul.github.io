@@ -1,56 +1,116 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Ahsanul's Personal Websites"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
 
- You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+Hi, I am Md Ahsanul Haque. I am a Ph.D. student in Computer Science at the University of Texas at El Paso (UTEP), specializing in the intersection of Artificial Intelligence and Cybersecurity. My research focuses on developing robust, scalable, and adaptive machine learning systems for malware detection in dynamic and evolving environments.
 
-A data-driven personal website
+My work primarily addresses real-world challenges such as **concept drift**, where data distributions change over time, making traditional models ineffective. I am particularly interested in designing **continual learning frameworks**, **semi-supervised learning approaches**, and **foundation models** that can adapt to new and unseen threats with minimal labeled data.
+
+Before starting my Ph.D., I worked as a Lecturer in Computer Science, where I taught core courses including Artificial Intelligence, Data Structures, Algorithms, and Operating Systems. This experience helped me build a strong foundation in both theoretical and practical aspects of computing, as well as a passion for mentoring and teaching.
+
+I have contributed to multiple research projects and publications, including work accepted at **ICLR 2026**, and continue to explore innovative solutions for real-world cybersecurity problems. My long-term goal is to bridge the gap between research and deployment by building intelligent systems that can operate reliably in large-scale, real-world environments.
+
+Beyond research, I enjoy exploring new technologies, contributing to open-source projects, and continuously improving my skills in machine learning and systems design.
+
+
+Publications
 ======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured Markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various Markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+**LAMDA: A Longitudinal Android Malware Benchmark for Concept Drift Analysis**  
+ *International Conference on Learning Representations (ICLR), 2026*  
+- Developed a large-scale benchmark dataset for studying malware evolution  
+- Enables research on continual learning and concept drift  
+   [Paper] | [Google Scholar]
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your Markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the Markdown files! You can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+---
 
-For those users that need more advanced functionality, the template also supports the following popular tools:
-- [MathJax](https://www.mathjax.org/) for mathematical equations
-- [Mermaid](https://mermaid.js.org/) for diagraming
-- [Plotly](https://plotly.com/javascript/) for plotting
+**CITADEL: A Semi-Supervised Active Learning Framework for Malware Detection Under Continuous Distribution Drift**  
+📍 *arXiv, 2025*  
+- Proposed an adaptive learning framework for evolving malware environments  
+ [arXiv] | [Google Scholar]
 
-Getting started
+---
+
+- **Smart-Agri: A Smart Agricultural Management with IoT-ML-Blockchain Integrated Framework** *(IJACSA, 2023)*  
+- **A Machine Learning Approach to Protect Electronic Devices from Damage Using the Concept of Outlier** *(ICASERT, 2019)*  
+
+Education
 ======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](https://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+**Ph.D. in Computer Science**  
+*University of Texas at El Paso (UTEP)*  
+Aug 2023 – Expected Dec 2027  
 
-Create content & metadata
-------
-For site content, there is one Markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a Markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each Markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+**M.S. in Computer Science**  
+*University of Texas at El Paso (UTEP)*  
+Aug 2023 – Dec 2025  
 
-**Markdown generator**
+**B.Sc. in Computer Science & Engineering**  
+*Khulna University of Engineering & Technology (KUET)*  
+Apr 2014 – Mar 2018  
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual Markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the Markdown files, then commit and push them to the GitHub repository.
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and Markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+Projects
+======
 
-Example: editing a Markdown file for a talk
-![Editing a Markdown file for a talk](/images/editing-talk.png)
+### 📈 Stock Market Price Prediction using LSTM  
+🔗 [Repository](https://github.com/mahsanul/Stock-Market-Price-Prediction-using-LSTM.git)  
+*Jan 2024 – Apr 2024*  
+- Developed an LSTM-based deep learning model for stock price prediction  
+- Captured temporal dependencies in financial time-series data  
+- Improved forecasting accuracy using sequence modeling  
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+---
+
+### 🔢 Bangla Handwritten Digit Recognition  
+🔗 [Repository](https://github.com/mahsanul/Bengali-handwritten-digit-recognition.git)  
+*Sep 2023 – Dec 2023*  
+- Course project for Machine Learning  
+- Used VGG16 to classify Bengali handwritten digits  
+- Converted handwritten digits into machine-readable format  
+
+---
+
+### 📱 Monitorial – Employee Monitoring System  
+🔗 [Repository](https://github.com/mahsanul/Monitorial.git)  
+*Jul 2017 – Jan 2018*  
+- Developed Android app for employee tracking and attendance  
+- Integrated GPS-based real-time monitoring  
+- Designed for large-scale industrial use  
+
+---
+
+Professional Experience
+======
+
+### 🎓 Graduate Research & Teaching Assistant  
+*University of Texas at El Paso (UTEP)*  
+Aug 2023 – Present  
+- Conduct research on AI-driven malware detection  
+- Developed a benchmark dataset published at **ICLR 2026**  
+- Designed adaptive deep learning models for evolving threats  
+- Conduct labs, grade coursework, and support students  
+
+---
+
+### 👨‍🏫 Lecturer, Department of CSE  
+*Bangladesh University of Business & Technology*  
+Jul 2018 – Jul 2023  
+- Taught Neural Networks, Algorithms, Data Structures, AI, OS, Graphics  
+- Conducted research alongside teaching  
+- Published peer-reviewed research  
+
+---
+
+### 💼 Software Development Intern  
+*IPvision Canada Inc.*  
+Jul 2017 – Aug 2017  
+- Worked with QA team on **RingID application**  
+- Identified and reported technical issues  
+
+
