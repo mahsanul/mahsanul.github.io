@@ -1,4 +1,3 @@
-<!--
 ---
 permalink: /
 title: "Ahsanul's Personal Websites"
@@ -6,12 +5,7 @@ author_profile: true
 redirect_from: 
   - /about/
   - /about.html
----
--->
----
-layout: home
-title: "Ahsanul Haque"
----
+--- 
 
 # 👋 Hi, I'm Ahsanul Haque
 
