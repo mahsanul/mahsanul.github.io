@@ -21,8 +21,7 @@ Publications
 - Enables research on continual learning and concept drift  
    [Paper](https://openreview.net/forum?id=1FnCrZtBNQ) | [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zlIQ81wAAAAJ&citation_for_view=zlIQ81wAAAAJ:UeHWp8X0CEIC)
 
-**CITADEL: A Semi-Supervised Active Learning Framework for Malware Detection Under Continuous Distribution Drift**  
-  *arXiv, 2025*  
+**CITADEL: A Semi-Supervised Active Learning Framework for Malware Detection Under Continuous Distribution Drift** *(arXiv, 2025)*  
 - Proposed an adaptive learning framework for evolving malware environments  
  [arXiv](https://arxiv.org/abs/2511.11979) | [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zlIQ81wAAAAJ&citation_for_view=zlIQ81wAAAAJ:zYLM7Y9cAGgC)
 
@@ -55,22 +54,19 @@ Projects
 ======
 
 ### 📈 Stock Market Price Prediction using LSTM  
-🔗 [Repository](https://github.com/mahsanul/Stock-Market-Price-Prediction-using-LSTM.git)  
-*Jan 2024 – Apr 2024*  
+🔗 [Repository](https://github.com/mahsanul/Stock-Market-Price-Prediction-using-LSTM.git)  *Jan 2024 – Apr 2024*  
 - Developed an LSTM-based deep learning model for stock price prediction  
 - Captured temporal dependencies in financial time-series data  
 - Improved forecasting accuracy using sequence modeling  
 
 ### 🔢 Bangla Handwritten Digit Recognition  
-🔗 [Repository](https://github.com/mahsanul/Bengali-handwritten-digit-recognition.git)  
-*Sep 2023 – Dec 2023*  
+🔗 [Repository](https://github.com/mahsanul/Bengali-handwritten-digit-recognition.git)  *Sep 2023 – Dec 2023*  
 - Course project for Machine Learning  
 - Used VGG16 to classify Bengali handwritten digits  
 - Converted handwritten digits into machine-readable format  
 
 ### 📱 Monitorial – Employee Monitoring System  
-🔗 [Repository](https://github.com/mahsanul/Monitorial.git)  
-*Jul 2017 – Jan 2018*  
+🔗 [Repository](https://github.com/mahsanul/Monitorial.git)  *Jul 2017 – Jan 2018*  
 - Developed Android app for employee tracking and attendance  
 - Integrated GPS-based real-time monitoring  
 - Designed for large-scale industrial use  
