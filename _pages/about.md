@@ -7,13 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-Hi, I am Md Ahsanul Haque. I am a Ph.D. student in Computer Science at the University of Texas at El Paso (UTEP), specializing in the intersection of Artificial Intelligence and Cybersecurity. My research focuses on developing robust, scalable, and adaptive machine learning systems for malware detection in dynamic and evolving environments.
+Hi, I am Md Ahsanul Haque. I am a Ph.D. student in Computer Science at the University of Texas at El Paso (UTEP), specializing in the intersection of Artificial Intelligence and Cybersecurity. My research focuses on developing robust, scalable, and adaptive machine learning systems for malware detection in dynamic and evolving environments. My work primarily addresses real-world challenges such as **concept drift**, where data distributions change over time, making traditional models ineffective. I am particularly interested in designing **continual learning frameworks**, **semi-supervised learning approaches**, and **foundation models** that can adapt to new and unseen threats with minimal labeled data.
 
-My work primarily addresses real-world challenges such as **concept drift**, where data distributions change over time, making traditional models ineffective. I am particularly interested in designing **continual learning frameworks**, **semi-supervised learning approaches**, and **foundation models** that can adapt to new and unseen threats with minimal labeled data.
-
-Before starting my Ph.D., I worked as a Lecturer in Computer Science, where I taught core courses including Artificial Intelligence, Data Structures, Algorithms, and Operating Systems. This experience helped me build a strong foundation in both theoretical and practical aspects of computing, as well as a passion for mentoring and teaching.
-
-I have contributed to multiple research projects and publications, including work accepted at **ICLR 2026**, and continue to explore innovative solutions for real-world cybersecurity problems. My long-term goal is to bridge the gap between research and deployment by building intelligent systems that can operate reliably in large-scale, real-world environments. Beyond research, I enjoy exploring new technologies, contributing to open-source projects, and continuously improving my skills in machine learning and AI Security.
+Before starting my Ph.D., I worked as a Lecturer in Computer Science, where I taught core courses including Artificial Intelligence, Data Structures, Algorithms, and Operating Systems. This experience helped me build a strong foundation in both theoretical and practical aspects of computing, as well as a passion for mentoring and teaching. I have contributed to multiple research projects and publications, including work accepted at **ICLR 2026**, and continue to explore innovative solutions for real-world cybersecurity problems. My long-term goal is to bridge the gap between research and deployment by building intelligent systems that can operate reliably in large-scale, real-world environments. Beyond research, I enjoy exploring new technologies, contributing to open-source projects, and continuously improving my skills in machine learning and AI Security.
 
 ---
 
@@ -26,7 +22,7 @@ Publications
    [Paper](https://openreview.net/forum?id=1FnCrZtBNQ) | [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zlIQ81wAAAAJ&citation_for_view=zlIQ81wAAAAJ:UeHWp8X0CEIC)
 
 **CITADEL: A Semi-Supervised Active Learning Framework for Malware Detection Under Continuous Distribution Drift**  
-📍 *arXiv, 2025*  
+  *arXiv, 2025*  
 - Proposed an adaptive learning framework for evolving malware environments  
  [arXiv](https://arxiv.org/abs/2511.11979) | [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zlIQ81wAAAAJ&citation_for_view=zlIQ81wAAAAJ:zYLM7Y9cAGgC)
 
@@ -37,7 +33,6 @@ Publications
    [Google Scholar](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zlIQ81wAAAAJ&citation_for_view=zlIQ81wAAAAJ:u5HHmVD_uO8C)
 
 ---
-
 
 Education
 ======
@@ -54,6 +49,7 @@ Aug 2023 – Dec 2025
 *Khulna University of Engineering & Technology (KUET)*  
 Apr 2014 – Mar 2018  
 
+---
 
 Projects
 ======
@@ -65,16 +61,12 @@ Projects
 - Captured temporal dependencies in financial time-series data  
 - Improved forecasting accuracy using sequence modeling  
 
----
-
 ### 🔢 Bangla Handwritten Digit Recognition  
 🔗 [Repository](https://github.com/mahsanul/Bengali-handwritten-digit-recognition.git)  
 *Sep 2023 – Dec 2023*  
 - Course project for Machine Learning  
 - Used VGG16 to classify Bengali handwritten digits  
 - Converted handwritten digits into machine-readable format  
-
----
 
 ### 📱 Monitorial – Employee Monitoring System  
 🔗 [Repository](https://github.com/mahsanul/Monitorial.git)  
@@ -96,16 +88,12 @@ Aug 2023 – Present
 - Designed adaptive deep learning models for evolving threats  
 - Conduct labs, grade coursework, and support students  
 
----
-
 ### 👨‍🏫 Lecturer, Department of CSE  
 *Bangladesh University of Business & Technology*  
 Jul 2018 – Jul 2023  
 - Taught Neural Networks, Algorithms, Data Structures, AI, OS, Graphics  
 - Conducted research alongside teaching  
 - Published peer-reviewed research  
-
----
 
 ### 💼 Software Development Intern  
 *IPvision Canada Inc.*  
