@@ -1,0 +1,149 @@
+---
+title: Curriculum Vitae
+kicker: CV
+permalink: /cv/
+lead: "Education, publications, experience, skills, and service. This page prints well. Use your browser's Print command to save it as a PDF."
+description: "Curriculum vitae of Md Ahsanul Haque: education, publications, experience, skills, service, and honors."
+redirect_from:
+  - /resume/
+body_class: is-cv
+---
+{%- assign p = site.data.profile -%}
+
+<div class="cv">
+  <aside class="cv__aside">
+    <nav class="cv__toc" aria-label="On this page">
+      <p class="eyebrow">On this page</p>
+      <ul>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#honors">Honors</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+    <div class="cv__actions">
+      {% include cv-button.html class="btn btn--solid" label="Download PDF" %}
+      <button type="button" class="btn btn--ghost" data-print>{% include icon.html name="doc" %}<span>Print this page</span></button>
+    </div>
+  </aside>
+
+  <div class="cv__main">
+    <header class="cv__header">
+      <h2 class="cv__name">{{ p.name }}</h2>
+      <p>{{ p.role }}, {{ p.affiliation }}<br>{{ p.location }}</p>
+      <p>{% include email.html show="address" %}</p>
+    </header>
+
+    <section class="cv-section" id="summary">
+      <h2 class="cv-section__title">Summary</h2>
+      <p>{{ p.cv_summary }}</p>
+    </section>
+
+    <section class="cv-section" id="education">
+      <h2 class="cv-section__title">Education</h2>
+      {%- for e in site.data.education -%}
+      <div class="cv-entry">
+        <p class="cv-entry__when">{{ e.start }} – {{ e.end }}</p>
+        <div>
+          <h3 class="cv-entry__title">{{ e.degree }}</h3>
+          <p class="cv-entry__org">{% if e.school_url %}<a href="{{ e.school_url }}" target="_blank" rel="noopener">{{ e.school }}</a>{% else %}{{ e.school }}{% endif %}</p>
+          {%- if e.gpa %}<p class="cv-entry__note">CGPA: {{ e.gpa }}</p>{% endif -%}
+          {%- if e.advisor %}<p class="cv-entry__note">Advisor: {{ e.advisor }}</p>{% endif -%}
+          {%- if e.thesis %}<p class="cv-entry__note">Thesis: {{ e.thesis }}</p>{% endif -%}
+        </div>
+      </div>
+      {%- endfor -%}
+    </section>
+
+    <section class="cv-section" id="publications">
+      <h2 class="cv-section__title">Research publications</h2>
+      {%- assign me = p.name -%}
+      <ol class="cv-pubs">
+        {%- for pub in site.data.publications -%}
+        <li>
+          {%- for a in pub.authors -%}
+            {%- if a == me -%}<strong>{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}
+            {%- if forloop.rindex == 2 -%}{%- if forloop.length > 2 -%},{%- endif %} and {% elsif forloop.last == false %}, {% endif -%}
+          {%- endfor -%}.
+          “{{ pub.title }}.”
+          <em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% if pub.number %}({{ pub.number }}){% endif %}{% endif %}, {{ pub.year }}.
+          {%- if pub.status %} ({{ pub.status }}.){% endif %}
+          <span class="cv-pubs__links">
+            {%- if pub.links.paper %}<a href="{{ pub.links.paper }}">[Paper]</a>{% endif -%}
+            {%- if pub.links.arxiv %} <a href="{{ pub.links.arxiv }}">[arXiv]</a>{% endif -%}
+            {%- if pub.links.code %} <a href="{{ pub.links.code }}">[Code]</a>{% endif -%}
+            {%- if pub.links.scholar %} <a href="{{ pub.links.scholar }}">[Google Scholar]</a>{% endif -%}
+          </span>
+        </li>
+        {%- endfor -%}
+      </ol>
+    </section>
+
+    <section class="cv-section" id="experience">
+      <h2 class="cv-section__title">Professional experience</h2>
+      {%- for x in site.data.experience -%}
+      <div class="cv-entry">
+        <p class="cv-entry__when">{{ x.start }} – {{ x.end }}</p>
+        <div>
+          <h3 class="cv-entry__title">{{ x.role }}</h3>
+          <p class="cv-entry__org">{% if x.org_url %}<a href="{{ x.org_url }}" target="_blank" rel="noopener">{{ x.org }}</a>{% else %}{{ x.org }}{% endif %}, {{ x.location }}</p>
+          <ul class="bullets">
+            {%- for b in x.bullets -%}<li>{{ b | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>{%- endfor -%}
+          </ul>
+        </div>
+      </div>
+      {%- endfor -%}
+    </section>
+
+    <section class="cv-section" id="skills">
+      <h2 class="cv-section__title">Technical skills</h2>
+      <dl class="skills">
+        {%- for g in site.data.skills -%}
+        <div class="skills__row">
+          <dt>{{ g.group }}</dt>
+          <dd>{{ g.items | join: ", " }}</dd>
+        </div>
+        {%- endfor -%}
+      </dl>
+    </section>
+
+    <section class="cv-section" id="service">
+      <h2 class="cv-section__title">Leadership and professional service</h2>
+      {%- for s in site.data.service -%}
+      <div class="cv-entry cv-entry--tight">
+        <p class="cv-entry__when">{{ s.year }}</p>
+        <p><strong>{{ s.role }}</strong>, {{ s.venue }}</p>
+      </div>
+      {%- endfor -%}
+    </section>
+
+    <section class="cv-section" id="honors">
+      <h2 class="cv-section__title">Honors and awards</h2>
+      {%- for h in site.data.honors -%}
+      <div class="cv-entry">
+        <p class="cv-entry__when">{{ h.period }}</p>
+        <div>
+          <h3 class="cv-entry__title">{{ h.title }}, {{ h.org }}</h3>
+          <p class="cv-entry__note">{{ h.description }}</p>
+        </div>
+      </div>
+      {%- endfor -%}
+    </section>
+
+    <section class="cv-section" id="projects">
+      <h2 class="cv-section__title">Projects</h2>
+      {%- for pr in site.data.projects -%}
+      <div class="cv-entry">
+        <p class="cv-entry__when">{{ pr.period }}</p>
+        <div>
+          <h3 class="cv-entry__title">{{ pr.name }}{% if pr.tech %} <span class="cv-entry__tech">({{ pr.tech | join: ", " }})</span>{% endif %}</h3>
+          <p class="cv-entry__note">{{ pr.summary }}{% if pr.links.code %} <a href="{{ pr.links.code }}">[Code]</a>{% endif %}</p>
+        </div>
+      </div>
+      {%- endfor -%}
+    </section>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{%- comment -%}
+  List of link "chips" (Scholar, ORCID, GitHub, ...) from _data/profile.yml, plus email.
+{%- endcomment -%}
+<ul class="chips">
+  {%- for l in site.data.profile.links -%}
+    <li><a class="chip" href="{{ l.url }}" target="_blank" rel="noopener">{% include brand.html name=l.icon %}<span>{{ l.label }}</span></a></li>
+  {%- endfor -%}
+  {%- unless include.no_email -%}
+  <li><span class="chip chip--mail">{% include icon.html name="mail" %}{% include email.html label="Email" %}</span></li>
+  {%- endunless -%}
+</ul>

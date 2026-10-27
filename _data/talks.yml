@@ -1,0 +1,20 @@
+# ---------------------------------------------------------------------------
+# TALKS AND PRESENTATIONS. Newest first.
+#
+# The "Talks" tab is hidden while this list is empty. When you add the first
+# talk below, the tab appears in the menu automatically.
+#
+# To add a talk, remove the "#" from the lines of the example, then edit them.
+# Make sure the first line starts at the left edge with "- title:".
+#
+# - title: "Title of the talk"
+#   event: "Name of the conference or seminar"
+#   date: "April 2026"
+#   location: "City, Country"
+#   type: "Poster"             # Talk, Poster, Invited talk, Tutorial, ...
+#   summary: "One sentence about the talk."
+#   links:
+#     slides: "/files/my-slides.pdf"
+#     video: "https://..."
+#     poster: "/files/my-poster.pdf"
+# ---------------------------------------------------------------------------

@@ -1,0 +1,21 @@
+---
+title: Notes
+permalink: /notes/
+lead: "Short writing about my research, things I learn, and ideas I want to share."
+description: "Notes and short articles by Md Ahsanul Haque."
+---
+{%- if site.posts.size == 0 -%}
+<p class="empty">No notes have been published yet.</p>
+{%- endif -%}
+<ol class="note-list">
+  {%- for post in site.posts -%}
+  <li class="note-item">
+    <time class="note-item__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    <div>
+      <h2 class="note-item__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+      {%- if post.lead -%}<p>{{ post.lead }}</p>{%- else -%}<p>{{ post.excerpt | strip_html | truncate: 180 }}</p>{%- endif -%}
+    </div>
+  </li>
+  {%- endfor -%}
+</ol>
+<p class="more"><a class="arrow-link" href="{{ '/feed.xml' | relative_url }}"><span>Subscribe with RSS</span>{% include icon.html name="arrow-right" %}</a></p>

@@ -1,33 +1,34 @@
-# The following is the order of the links in the header of the website.
+# ---------------------------------------------------------------------------
+# MENU: the links at the top of every page, in order.
 #
-# Changing the order here will adjust the order and you can also add additional
-# links. Removing a link prevents it from showing in the header, but does not
-# prevent it from being included in the site.
+#   title     Text in the menu.
+#   url       Page address. It must start and end with a slash, like /research/
+#   requires  Optional. "talks" = show only when talks.yml has items.
+#             "posts" = show only when at least one Note exists in _posts.
 #
-# NOTE that only one of the CV options should be selected, the first is for the
-#      Markdown formatted page while the second is generated using JSON.
+# To hide a tab, put a # at the start of its lines.
+# To change the order, move the blocks up or down.
+# ---------------------------------------------------------------------------
 
-main:
-  - title: "Publications"
-    url: /publications/
+- title: "Research"
+  url: /research/
 
-  - title: "Talks"
-    url: /talks/    
+- title: "Publications"
+  url: /publications/
 
-  - title: "Teaching"
-    url: /teaching/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
-    
-  - title: "CV"
-    url: /cv/
-    
-  # - title: "CV"
-  #   url: /cv-json/
-    
-  - title: "Guide"
-    url: /markdown/
+- title: "Teaching"
+  url: /teaching/
+
+- title: "Projects"
+  url: /projects/
+
+- title: "Talks"
+  url: /talks/
+  requires: talks
+
+- title: "Notes"
+  url: /notes/
+  requires: posts
+
+- title: "CV"
+  url: /cv/

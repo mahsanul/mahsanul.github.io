@@ -1,0 +1,27 @@
+# ---------------------------------------------------------------------------
+# NEWS: short updates. The newest item should be FIRST (at the top).
+# Used on: home page (the first 5 items are shown).
+#
+# To add news: copy one block, paste it at the TOP of the list, and edit it.
+#
+#   date   Any short text. Examples: "Mar 2027", "2027", "15 Mar 2027".
+#   text   One sentence. You can use Markdown: **bold**, *italic*, [link](https://...).
+#   link   Optional. A page address. It makes a "Read more" link.
+# ---------------------------------------------------------------------------
+
+- date: "2026"
+  text: "**LAMDA**, our benchmark for Android malware and concept drift, is published at **ICLR 2026**."
+  link: "/publications/#haque2026lamda"
+
+- date: "2026"
+  text: "I am serving as a peer reviewer for **NeurIPS 2026**."
+
+- date: "2026"
+  text: "I am serving as an artifact evaluator for **ACM CCS 2026** and **NDSS 2026**."
+
+- date: "Dec 2025"
+  text: "I completed my M.S. in Computer Science at UTEP."
+
+- date: "Nov 2025"
+  text: "**CITADEL**, our semi-supervised active learning framework for malware detection, is now on arXiv."
+  link: "/publications/#haque2025citadel"

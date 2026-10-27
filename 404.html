@@ -1,0 +1,18 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<section class="page">
+  <div class="wrap page-head">
+    <p class="kicker">Error 404</p>
+    <h1 class="page-title">This page does not exist.</h1>
+    <p class="page-lead">The link may be old, or the page may have moved. Try one of these pages.</p>
+    <div class="hero__cta">
+      <a class="btn btn--solid" href="{{ '/' | relative_url }}"><span>Go to home page</span>{% include icon.html name="arrow-right" %}</a>
+      <a class="btn btn--ghost" href="{{ '/publications/' | relative_url }}"><span>Publications</span></a>
+      <a class="btn btn--ghost" href="{{ '/cv/' | relative_url }}"><span>CV</span></a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+title: Projects
+permalink: /projects/
+lead: "Software and course projects. My main research projects, LAMDA and CITADEL, are on the Research page."
+description: "Software and machine learning projects by Md Ahsanul Haque."
+redirect_from:
+  - /portfolio/
+---
+<div class="cards cards--3">
+  {%- for pr in site.data.projects -%}
+  <article class="card">
+    <p class="card__meta">{{ pr.period }}</p>
+    <h2 class="card__title card__title--sm">{{ pr.name }}</h2>
+    <p>{{ pr.summary }}</p>
+    {%- if pr.tech -%}
+    <ul class="tags tags--small">
+      {%- for t in pr.tech -%}<li>{{ t }}</li>{%- endfor -%}
+    </ul>
+    {%- endif -%}
+    <div class="pub__actions">
+      {% include pub-links.html links=pr.links %}
+    </div>
+  </article>
+  {%- endfor -%}
+</div>
+
+<p class="more"><a class="arrow-link" href="{{ '/research/' | relative_url }}"><span>See my research projects</span>{% include icon.html name="arrow-right" %}</a></p>

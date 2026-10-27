@@ -1,0 +1,7 @@
+{%- comment -%}
+  Shows the email address in a way that simple spam robots cannot read.
+  With JavaScript: a normal mailto link. Without JavaScript: "name [at] domain [dot] com".
+  Options: label="Text of the link", show="address" (shows the full address as the link text).
+{%- endcomment -%}
+{%- assign email_parts = site.data.profile.email | split: "@" -%}
+<a class="js-email" href="#contact" data-user="{{ email_parts[0] }}" data-domain="{{ email_parts[1] }}"{% if include.show == "address" %} data-show="address"{% endif %}>{{ include.label | default: "Email" }}</a><span class="email-fallback">{{ email_parts[0] }} [at] {{ email_parts[1] | replace: ".", " [dot] " }}</span>

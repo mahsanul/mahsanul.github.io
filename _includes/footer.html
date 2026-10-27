@@ -1,25 +1,43 @@
-{% include base_path %}
+{%- assign p = site.data.profile -%}
+{%- assign talks_count = site.data.talks | size -%}
+{%- assign posts_count = site.posts | size -%}
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div class="site-footer__about">
+        <p class="site-footer__name">{{ p.name }}</p>
+        <p>{{ p.role }}<br>
+          <a href="{{ p.affiliation_url }}" target="_blank" rel="noopener">{{ p.affiliation }}</a><br>
+          {{ p.location }}</p>
+      </div>
 
-{% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-    {% if site.author.github %}
-      <li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-    {% endif %}
-    {% if site.author.bitbucket %}
-      <li><a href="https://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
-    {% endif %}
-    {% if site.atom_feed.hide != true %}
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-    {% endif %}
-  </ul>
-</div>
-{% endif %}
+      <nav class="site-footer__col" aria-label="Footer">
+        <p class="eyebrow">Pages</p>
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          {%- for item in site.data.navigation -%}
+            {%- if item.requires == "talks" and talks_count == 0 -%}{%- continue -%}{%- endif -%}
+            {%- if item.requires == "posts" and posts_count == 0 -%}{%- continue -%}{%- endif -%}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </nav>
 
-<div class="page__footer-copyright">
-  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated {{ "now" | date: '%Y-%m-%d' }}
-</div>
+      <div class="site-footer__col">
+        <p class="eyebrow">Elsewhere</p>
+        <ul>
+          {%- for l in p.links -%}
+            <li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a></li>
+          {%- endfor -%}
+          <li>{% include email.html label="Email" %}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bar">
+      <p>© {{ site.time | date: "%Y" }} {{ p.name }}</p>
+      <p>Last updated {{ site.time | date: "%B %Y" }}</p>
+      <p><a href="#main">Back to top {% include icon.html name="arrow-up" %}</a></p>
+    </div>
+  </div>
+</footer>

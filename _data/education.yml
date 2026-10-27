@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------------
+# EDUCATION: degrees. Newest first.
+# Used on: CV page.
+#
+#   degree    Name of the degree.
+#   school    University name.
+#   school_url Optional website.
+#   start/end Free text. For an expected date write: "Expected Dec 2027".
+#   gpa       Optional. Remove the line to hide it.
+#   advisor   Optional. Example: advisor: "Prof. Name"
+#   thesis    Optional. Title of your thesis or dissertation.
+# ---------------------------------------------------------------------------
+
+- degree: "Ph.D. in Computer Science"
+  school: "The University of Texas at El Paso (UTEP)"
+  school_url: "https://www.utep.edu"
+  start: "Aug 2023"
+  end: "Expected Dec 2027"
+  gpa: "3.36 / 4.00"
+  # advisor: ""
+  # thesis: ""
+
+- degree: "M.S. in Computer Science"
+  school: "The University of Texas at El Paso (UTEP)"
+  school_url: "https://www.utep.edu"
+  start: "Aug 2023"
+  end: "Dec 2025"
+  gpa: "3.36 / 4.00"
+
+- degree: "B.Sc. in Computer Science & Engineering"
+  school: "Khulna University of Engineering & Technology (KUET)"
+  start: "Apr 2014"
+  end: "Mar 2018"
+  gpa: "3.73 / 4.00"

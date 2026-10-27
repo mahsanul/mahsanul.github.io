@@ -1,0 +1,17 @@
+# ---------------------------------------------------------------------------
+# SKILLS: groups of skills.
+# Used on: CV page.
+# Add a new group by copying one "- group:" block.
+# ---------------------------------------------------------------------------
+
+- group: "Programming languages"
+  items: ["Python", "C", "C++", "Java", "Bash"]
+
+- group: "Machine learning and AI"
+  items: ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Hugging Face Transformers", "OpenCV", "NLTK", "YOLO"]
+
+- group: "ML security and adversarial ML"
+  items: ["Adversarial robustness", "Backdoor attacks", "Malware detection", "Active learning", "Concept drift analysis"]
+
+- group: "Tools and infrastructure"
+  items: ["AWS", "Docker", "Slurm", "Linux", "Google Colab", "Git", "NodeMCU", "Firebase"]

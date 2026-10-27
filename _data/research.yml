@@ -1,0 +1,61 @@
+# ---------------------------------------------------------------------------
+# RESEARCH: themes, projects, and future directions.
+# Used on: Research page, and the theme cards on the home page.
+# See WEBSITE_GUIDE.md, section "Change my research topics".
+#
+#   intro        Opening paragraph of the Research page. Markdown is allowed.
+#   themes       Main research areas. "summary" shows on the home page.
+#                "details" shows on the Research page.
+#   projects     Bigger research projects with a status and links.
+#   directions   Things you want to work on next.
+# ---------------------------------------------------------------------------
+
+intro: "My research is about making machine learning systems **reliable in security work**. In real use, data does not stay the same. Attackers change their methods, software changes, and labels are hard to get. I try to build and test models that still work well in these conditions."
+
+themes:
+  - title: "Malware detection under concept drift"
+    summary: "Malware and normal software change over time. I study why detectors lose accuracy on new data, and how to keep them reliable."
+    details: "New malware families, new software versions, and changing attacker behavior all change the data. A detector trained on old samples can become less accurate over time. I study how to measure this drift, how to notice it early, and how to adapt models so they stay reliable in long-term use."
+
+  - title: "Learning with few labels"
+    summary: "Labeling malware is slow and costly. I design semi-supervised and active learning methods that need fewer labels."
+    details: "Experts must check each sample before it can be used for training, and this takes time. I design semi-supervised active learning methods. They use unlabeled data and ask for a label only on the most useful samples. CITADEL is an example of this work."
+
+  - title: "Adversarial machine learning"
+    summary: "Attackers can poison training data, add backdoors, or avoid detection. I test and improve model robustness against these attacks."
+    details: "I apply data poisoning, backdoor attacks, and evasion attacks to test malware detectors and agent-based ML systems. The goal is to find weak points early and to make these systems more robust."
+
+  - title: "Benchmarks and reproducibility"
+    summary: "Good research needs data and code that others can use. I build benchmarks and I help check the artifacts of other papers."
+    details: "I built LAMDA, a longitudinal Android malware benchmark, so that other researchers can evaluate drift-aware detectors in a fair and repeatable way. In 2026, I also serve as an artifact evaluator for ACM CCS and NDSS. In this role I check whether the code and data of accepted papers can reproduce the results."
+
+projects:
+  - name: "LAMDA"
+    full_name: "A Longitudinal Android Malware Benchmark for Concept Drift Analysis"
+    tag: "ICLR 2026"
+    summary: "A large benchmark that records how Android malware changes over time. It lets researchers test drift-aware detectors in a repeatable way."
+    points:
+      - "Built and released as a public benchmark for concept drift analysis."
+      - "Supports research on continual learning and malware evolution."
+      - "Enables reproducible evaluation of drift-aware detectors."
+    links:
+      paper: "https://openreview.net/forum?id=1FnCrZtBNQ"
+      # code: "https://github.com/..."
+      # data: "https://..."
+
+  - name: "CITADEL"
+    full_name: "A Semi-Supervised Active Learning Framework for Malware Detection Under Continuous Distribution Drift"
+    tag: "arXiv 2025"
+    summary: "A framework that keeps a malware detector accurate while the data keeps changing, and that needs far fewer labeled samples."
+    points:
+      - "Combines semi-supervised learning with active learning."
+      - "Reduces labeling cost while keeping detection accuracy."
+      - "Currently under revision for ICSE."
+    links:
+      arxiv: "https://arxiv.org/abs/2511.11979"
+      # code: "https://github.com/..."
+
+directions:
+  - "Continual learning methods that adapt to new threats."
+  - "Foundation models that can adapt to new and unseen threats with very few labeled examples."
+  - "Systems that work reliably at large scale in real environments, not only in the lab."

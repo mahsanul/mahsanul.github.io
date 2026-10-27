@@ -1,12 +1,32 @@
 ---
-layout: archive
-title: "Teaching"
+title: Teaching
 permalink: /teaching/
-author_profile: true
+lead: "I taught computer science for five years as a university lecturer. Now I support courses as a graduate teaching assistant at UTEP."
+description: "Teaching experience of Md Ahsanul Haque: lecturer in computer science for five years and graduate teaching assistant at UTEP."
 ---
-
-{% include base_path %}
-
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<div class="timeline">
+  {%- for t in site.data.teaching -%}
+  <article class="role">
+    <div class="role__when">
+      <p class="role__period">{{ t.period }}</p>
+      <p class="role__where">{{ t.location }}</p>
+    </div>
+    <div class="role__what">
+      <h2 class="role__title">{{ t.role }}</h2>
+      <p class="role__org">{{ t.org }}</p>
+      {%- if t.courses and t.courses.size > 0 -%}
+      <h3 class="eyebrow">Courses</h3>
+      <ul class="tags">
+        {%- for c in t.courses -%}<li>{{ c }}</li>{%- endfor -%}
+      </ul>
+      {%- endif -%}
+      {%- if t.duties and t.duties.size > 0 -%}
+      <h3 class="eyebrow">What I did</h3>
+      <ul class="bullets">
+        {%- for d in t.duties -%}<li>{{ d }}</li>{%- endfor -%}
+      </ul>
+      {%- endif -%}
+    </div>
+  </article>
+  {%- endfor -%}
+</div>

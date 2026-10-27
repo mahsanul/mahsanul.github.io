@@ -1,0 +1,6 @@
+{%- comment -%}
+  Draws a logo icon for a link. The name can be: scholar, orcid, github, linkedin, arxiv,
+  dblp, researchgate, x, bluesky, youtube, mastodon, kaggle, cv. Any other name shows a plain link icon.
+{%- endcomment -%}
+{%- assign known = "scholar,orcid,github,linkedin,arxiv,dblp,researchgate,x,bluesky,youtube,mastodon,kaggle,cv" | split: "," -%}
+{%- if known contains include.name -%}<i class="bi bi-{{ include.name }}" aria-hidden="true"></i>{%- else -%}{% include icon.html name="link" %}{%- endif -%}

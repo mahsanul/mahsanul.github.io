@@ -1,0 +1,102 @@
+# ---------------------------------------------------------------------------
+# PROFILE: your name, photo, short texts, and links.
+# This file controls the top part of the home page, the footer, and the
+# contact section. See WEBSITE_GUIDE.md, section "Change my basic information".
+#
+# YAML tips:
+#   - Keep the spaces at the start of each line. They are important.
+#   - If a text has a colon ( : ) in it, put the whole text inside "quotes".
+#   - Lines that start with # are comments. The website ignores them.
+# ---------------------------------------------------------------------------
+
+name: "Md Ahsanul Haque"
+role: "Ph.D. Student in Computer Science"
+affiliation: "The University of Texas at El Paso (UTEP)"
+affiliation_url: "https://www.utep.edu"
+location: "El Paso, Texas, USA"
+
+# Small line above the main headline on the home page.
+kicker: "Ph.D. Student · Computer Science · UTEP"
+
+# Main headline. Put *stars* around the word that should be highlighted.
+headline: "Machine learning for security that stays *accurate* as threats change."
+
+# Short text under the headline.
+lead: "I research adversarial machine learning and ML system security. My work focuses on malware detection, backdoor attacks, and model robustness when data changes over time."
+
+# Photo. Put the image file in the images/ folder.
+photo: "/images/ahsanul-haque-800.jpg"
+photo_small: "/images/ahsanul-haque-480.jpg"
+photo_alt: "Portrait of Md Ahsanul Haque"
+photo_caption: "El Paso, Texas"
+
+# Contact. The email address is hidden from simple spam robots on the page.
+# After you finish your Ph.D., you can replace this with a new address.
+email: "ahsanulhaque865@gmail.com"
+
+# Your CV file. Put the PDF in the files/ folder with this exact name.
+# The "Download CV" buttons appear automatically when the file exists.
+cv_file: "/files/Ahsanul_Haque_CV.pdf"
+
+# Search engines and social media use this text and image when your link is shared.
+share_image: "/images/og-card.jpg"
+
+# Four small facts under the headline. (The first fact, the number of
+# publications, is counted automatically from publications.yml.)
+facts:
+  - value: "ICLR 2026"
+    label: "Paper published"
+  - value: "NeurIPS · CCS · NDSS"
+    label: "Reviewer and artifact evaluator, 2026"
+  - value: "5 years"
+    label: "As a university lecturer"
+
+# Links. "icon" must be one of:
+#   scholar, orcid, github, linkedin, arxiv, dblp, researchgate, x, bluesky,
+#   youtube, mastodon, kaggle, cv, link
+# Remove a line (or put a # at the start) to hide a link.
+links:
+  - label: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=zlIQ81wAAAAJ&hl=en"
+    icon: "scholar"
+  - label: "ORCID"
+    url: "https://orcid.org/0009-0001-2731-7222"
+    icon: "orcid"
+  - label: "GitHub"
+    url: "https://github.com/mahsanul"
+    icon: "github"
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/ahsanulhaqueb15642131"
+    icon: "linkedin"
+
+# Short summary at the top of the CV page.
+cv_summary: "Senior Ph.D. student in Computer Science at UTEP researching adversarial machine learning and ML system security. I focus on malware detection, backdoor attacks, and model robustness under distribution drift. I published at ICLR 2026, I am a reviewer for NeurIPS 2026, and I am an artifact evaluator for CCS and NDSS."
+
+# "About" section on the home page. You can use Markdown (**bold**, *italic*, [link](url)).
+bio: |
+  I am a Ph.D. student in Computer Science at the University of Texas at El Paso (UTEP). I work at the intersection of artificial intelligence and cybersecurity. My research builds machine learning systems for malware detection that are robust, scalable, and able to adapt as the world changes.
+
+  Many real-world problems are hard because of **concept drift**. This means the data changes over time, so a model that worked well yesterday may fail today. I study this problem in malware detection. I am especially interested in **continual learning**, **semi-supervised learning**, and **foundation models** that can adapt to new and unseen threats with very few labeled examples.
+
+  Before my Ph.D., I worked for five years as a Lecturer in Computer Science. I taught Artificial Intelligence, Data Structures, Algorithms, and Operating Systems. This work gave me a strong base in both theory and practice, and a real interest in teaching and mentoring.
+
+  My long-term goal is to connect research with real use. I want to build intelligent systems that work reliably in large, real-world environments. Outside research, I enjoy learning new technologies and working on open-source projects.
+
+# Short list shown in the "Currently" box on the home page. Update it often.
+now:
+  - "Working on my Ph.D. in Computer Science at UTEP (expected December 2027)."
+  - "Revising CITADEL, a semi-supervised active learning framework for malware detection, for ICSE."
+  - "Reviewing for NeurIPS 2026, and evaluating artifacts for ACM CCS 2026 and NDSS 2026."
+
+# Topics shown as small tags on the home page.
+interests:
+  - "Adversarial machine learning"
+  - "Malware detection"
+  - "Concept drift"
+  - "Backdoor attacks"
+  - "Model robustness"
+  - "Active learning"
+  - "Continual learning"
+
+# Text in the contact section at the bottom of the home page.
+contact_text: "If you work on malware detection, concept drift, or adversarial machine learning, I would be glad to hear from you. I am happy to talk about research ideas, datasets, and ways to work together."

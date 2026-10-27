@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------------
+# SERVICE: reviewing, committees, and volunteering. Newest first.
+# Used on: CV page and the home page.
+#
+#   role     Your role. Example: "Peer Reviewer"
+#   venue    Conference, journal, or event name.
+#   year     Year as text.
+#   featured true shows it on the home page.
+# ---------------------------------------------------------------------------
+
+- role: "Peer Reviewer"
+  venue: "Conference on Neural Information Processing Systems (NeurIPS)"
+  short: "NeurIPS"
+  year: "2026"
+  featured: true
+
+- role: "Artifact Evaluator"
+  venue: "ACM Conference on Computer and Communications Security (CCS)"
+  short: "ACM CCS"
+  year: "2026"
+  featured: true
+
+- role: "Artifact Evaluator"
+  venue: "Network and Distributed System Security Symposium (NDSS)"
+  short: "NDSS"
+  year: "2026"
+  featured: true
+
+- role: "Organizing Committee Member"
+  venue: "ICPC Dhaka Regional Programming Contest"
+  short: "ICPC Dhaka"
+  year: "2021"
+  featured: false
+
+- role: "Volunteer"
+  venue: "3rd EICT International Conference, KUET"
+  short: "EICT"
+  year: "2017"
+  featured: false

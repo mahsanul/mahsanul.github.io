@@ -1,0 +1,32 @@
+# ---------------------------------------------------------------------------
+# PROJECTS: software and course projects. Newest first.
+# Used on: Projects page.
+# (Big research projects such as LAMDA and CITADEL are in research.yml.)
+#
+#   name      Project name.
+#   period    Free text.
+#   tech      List of tools used.
+#   summary   One or two simple sentences.
+#   links     Optional. Any of: code, demo, paper, data.
+# ---------------------------------------------------------------------------
+
+- name: "Stock Market Price Prediction using LSTM"
+  period: "Jan 2024 – Apr 2024"
+  tech: ["TensorFlow", "Keras", "LSTM"]
+  summary: "An LSTM model that captures time patterns in historical stock data to forecast price movements."
+  links:
+    code: "https://github.com/mahsanul/Stock-Market-Price-Prediction-using-LSTM"
+
+- name: "Bangla Handwritten Digit Recognition"
+  period: "Sep 2023 – Dec 2023"
+  tech: ["TensorFlow", "Keras", "VGG16"]
+  summary: "A VGG16-based classifier that recognizes handwritten Bengali digits for automated text analysis. This was a course project for Machine Learning."
+  links:
+    code: "https://github.com/mahsanul/Bengali-handwritten-digit-recognition"
+
+- name: "Monitorial: Employee Monitoring System"
+  period: "Jul 2017 – Jan 2018"
+  tech: ["Android", "Firebase", "GPS"]
+  summary: "An Android app that uses GPS-based location services to track employee attendance in real time."
+  links:
+    code: "https://github.com/mahsanul/Monitorial"

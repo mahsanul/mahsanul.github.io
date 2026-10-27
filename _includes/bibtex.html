@@ -1,0 +1,37 @@
+{%- comment -%}
+  Creates BibTeX text for one publication. If the publication has its own "bibtex:" text,
+  that text is used. Otherwise the text is built from title, authors, venue, year, and so on.
+  Needs: pub
+{%- endcomment -%}
+{%- assign pub = include.pub -%}
+{%- if pub.bibtex -%}
+{{- pub.bibtex | strip | escape -}}
+{%- else -%}
+{%- assign ob = "{" -%}
+{%- assign cb = "}" -%}
+{%- if pub.type == "conference" -%}
+  {%- assign bib_type = "inproceedings" -%}
+  {%- assign venue_key = "booktitle  " -%}
+{%- else -%}
+  {%- assign bib_type = "article" -%}
+  {%- assign venue_key = "journal    " -%}
+{%- endif -%}
+{%- capture bib -%}
+@{{ bib_type }}{{ ob }}{{ pub.id }},
+  title     = {{ ob }}{{ pub.title }}{{ cb }},
+  author    = {{ ob }}{{ pub.authors | join: " and " }}{{ cb }},
+  {{ venue_key | slice: 0, 10 }}= {{ ob }}{{ pub.venue }}{{ cb }},
+{%- if pub.volume %}
+  volume    = {{ ob }}{{ pub.volume }}{{ cb }},
+{%- endif %}
+{%- if pub.number %}
+  number    = {{ ob }}{{ pub.number }}{{ cb }},
+{%- endif %}
+{%- if pub.pages %}
+  pages     = {{ ob }}{{ pub.pages }}{{ cb }},
+{%- endif %}
+  year      = {{ ob }}{{ pub.year }}{{ cb }}
+{{ cb }}
+{%- endcapture -%}
+{{- bib | escape -}}
+{%- endif -%}

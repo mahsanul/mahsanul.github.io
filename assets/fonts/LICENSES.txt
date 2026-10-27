@@ -1,0 +1,17 @@
+Fonts and icons used on this website, and their licenses
+
+Fraunces (fraunces-var.woff2, fraunces-italic-var.woff2)
+  SIL Open Font License 1.1. Copyright the Fraunces Project Authors.
+
+IBM Plex Sans and IBM Plex Mono (plex-sans-var.woff2, plex-mono-*.woff2)
+  SIL Open Font License 1.1. Copyright IBM Corp.
+
+Font Awesome Free, Brands (fa-brands-400.woff2)
+  Fonts: SIL Open Font License 1.1. Icons: CC BY 4.0.
+  https://fontawesome.com/license/free
+
+Academicons (academicons.woff)
+  Fonts: SIL Open Font License 1.1. Copyright James Walsh.
+  https://jpswalsh.github.io/academicons/
+
+The small interface icons (arrows, download, mail, and so on) are drawn for this site.

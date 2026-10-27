@@ -1,0 +1,59 @@
+{%- comment -%}
+  One publication card.
+  Needs: pub. Optional: compact=true (short version for the home page, no abstract or BibTeX).
+{%- endcomment -%}
+{%- assign pub = include.pub -%}
+{%- assign me = site.data.profile.name -%}
+{%- if pub.links.paper -%}{%- assign main_url = pub.links.paper -%}
+{%- elsif pub.links.arxiv -%}{%- assign main_url = pub.links.arxiv -%}
+{%- else -%}{%- assign main_url = "" -%}{%- endif -%}
+<article class="pub{% if include.compact %} pub--compact{% endif %}" id="{{ pub.id }}" data-type="{{ pub.type }}">
+  <div class="pub__badge">
+    <span class="stamp stamp--{{ pub.type }}">{{ pub.venue_short | default: pub.year }}</span>
+  </div>
+  <div class="pub__main">
+    <h3 class="pub__title">
+      {%- if main_url != "" -%}<a href="{{ main_url }}" target="_blank" rel="noopener">{{ pub.title }}</a>{%- else -%}{{ pub.title }}{%- endif -%}
+    </h3>
+    <p class="pub__authors">
+      {%- for a in pub.authors -%}
+        {%- if a == me -%}<strong class="me">{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}
+        {%- if forloop.rindex == 2 -%}{%- if forloop.length > 2 -%},{%- endif %} and {% elsif forloop.last == false %}, {% endif -%}
+      {%- endfor -%}
+    </p>
+    <p class="pub__venue">
+      <em>{{ pub.venue }}</em>
+      {%- if pub.volume -%}, {{ pub.volume }}{%- if pub.number -%}({{ pub.number }}){%- endif -%}{%- endif -%}
+      {%- if pub.pages -%}, pp. {{ pub.pages }}{%- endif -%}
+      , {{ pub.year }}.
+      {%- if pub.status %} <span class="pub__status">{{ pub.status }}</span>{%- endif -%}
+    </p>
+    {%- if pub.summary %}
+    <p class="pub__summary">{{ pub.summary }}</p>
+    {%- endif %}
+
+    <div class="pub__actions">
+      {%- include pub-links.html links=pub.links -%}
+      {%- unless include.compact -%}
+        {%- if pub.abstract -%}
+          <button class="btn-s btn-s--toggle" type="button" data-toggle="abs-{{ pub.id }}" aria-controls="abs-{{ pub.id }}">{% include icon.html name="text" %}<span>Abstract</span></button>
+        {%- endif -%}
+        <button class="btn-s btn-s--toggle" type="button" data-toggle="bib-{{ pub.id }}" aria-controls="bib-{{ pub.id }}">{% include icon.html name="bib" %}<span>BibTeX</span></button>
+      {%- endunless -%}
+    </div>
+
+    {%- unless include.compact -%}
+      {%- if pub.abstract %}
+      <div class="pub__panel" id="abs-{{ pub.id }}">
+        <p>{{ pub.abstract }}</p>
+      </div>
+      {%- endif %}
+      <div class="pub__panel" id="bib-{{ pub.id }}">
+        <div class="bib">
+          <button class="btn-s bib__copy" type="button" data-copy="bib-{{ pub.id }}">{% include icon.html name="copy" %}<span>Copy</span></button>
+          <pre><code>{% include bibtex.html pub=pub %}</code></pre>
+        </div>
+      </div>
+    {%- endunless -%}
+  </div>
+</article>

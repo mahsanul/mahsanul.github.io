@@ -1,0 +1,59 @@
+---
+title: Research
+permalink: /research/
+description: "Research of Md Ahsanul Haque: malware detection under concept drift, learning with few labels, adversarial machine learning, and reproducible benchmarks."
+---
+{%- assign r = site.data.research -%}
+
+<div class="prose prose--serif prose--lead">
+  {{ r.intro | markdownify }}
+</div>
+
+<!-- ============ Themes ============ -->
+<section class="block" aria-labelledby="themes-title">
+  <h2 class="block__title" id="themes-title"><span class="block__no">A</span>Research areas</h2>
+  <div class="theme-list">
+    {%- for t in r.themes -%}
+    <article class="theme-row">
+      <span class="theme__no">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
+      <div>
+        <h3 class="theme__title">{{ t.title }}</h3>
+        <p class="theme-row__summary">{{ t.summary }}</p>
+        <p class="theme-row__details">{{ t.details }}</p>
+      </div>
+    </article>
+    {%- endfor -%}
+  </div>
+</section>
+
+<!-- ============ Projects ============ -->
+<section class="block" aria-labelledby="projects-title">
+  <h2 class="block__title" id="projects-title"><span class="block__no">B</span>Featured research projects</h2>
+  <div class="cards cards--2">
+    {%- for pr in r.projects -%}
+    <article class="card card--project">
+      <div class="card__top">
+        <span class="stamp stamp--conference">{{ pr.tag }}</span>
+      </div>
+      <h3 class="card__title">{{ pr.name }}</h3>
+      <p class="card__sub">{{ pr.full_name }}</p>
+      <p>{{ pr.summary }}</p>
+      <ul class="card__points">
+        {%- for pt in pr.points -%}<li>{{ pt }}</li>{%- endfor -%}
+      </ul>
+      <div class="pub__actions">
+        {% include pub-links.html links=pr.links %}
+      </div>
+    </article>
+    {%- endfor -%}
+  </div>
+</section>
+
+<!-- ============ Directions ============ -->
+<section class="block" aria-labelledby="next-title">
+  <h2 class="block__title" id="next-title"><span class="block__no">C</span>What I want to work on next</h2>
+  <ul class="directions">
+    {%- for d in r.directions -%}<li>{{ d }}</li>{%- endfor -%}
+  </ul>
+  <p class="more"><a class="arrow-link" href="{{ '/publications/' | relative_url }}"><span>See my publications</span>{% include icon.html name="arrow-right" %}</a></p>
+</section>

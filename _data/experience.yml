@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# EXPERIENCE: jobs and positions. Newest first.
+# Used on: CV page.
+#
+#   role      Job title.
+#   org       Organization name.
+#   org_url   Optional website of the organization.
+#   location  City and country.
+#   start/end Free text. For a current job use end: "Present".
+#   bullets   What you did. One item per line. Markdown is allowed.
+# ---------------------------------------------------------------------------
+
+- role: "Graduate Research and Teaching Assistant"
+  org: "University of Texas at El Paso"
+  org_url: "https://www.utep.edu"
+  location: "El Paso, TX, USA"
+  start: "Aug 2023"
+  end: "Present"
+  bullets:
+    - "Designed and validated **CITADEL**, a semi-supervised active learning framework for malware detection under continuous distribution drift. It reduces labeling cost while keeping detection accuracy. The work is under revision for **ICSE**."
+    - "Built and released **LAMDA**, a longitudinal Android malware benchmark for concept drift analysis. It enables reproducible evaluation of drift-aware detectors. Published at **ICLR 2026**."
+    - "Applied adversarial machine learning techniques (data poisoning, backdoor attacks, evasion) to evaluate and improve the robustness of malware and agent-based ML systems."
+    - "Taught and supported 3+ semesters of coursework as a teaching assistant: led labs, developed assignments and exams, graded coursework, and held office hours for 50+ students per semester."
+
+- role: "Lecturer, Department of Computer Science & Engineering"
+  org: "Bangladesh University of Business & Technology"
+  location: "Dhaka, Bangladesh"
+  start: "Jul 2018"
+  end: "Jul 2023"
+  bullets:
+    - "Taught and designed course content for Neural Networks, Algorithms, Data Structures, Artificial Intelligence, Operating Systems, and Computer Graphics over 5 years."
+    - "Did independent research next to a full teaching load, and published peer-reviewed work in machine learning applications."
+
+- role: "Software Development Intern"
+  org: "IPvision Canada Inc."
+  location: "Dhaka, Bangladesh"
+  start: "Jul 2017"
+  end: "Aug 2017"
+  bullets:
+    - "Tested the RingID application from a user point of view, and wrote technical issue reports that helped the QA team decide on releases."

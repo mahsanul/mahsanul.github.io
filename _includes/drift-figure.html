@@ -1,0 +1,55 @@
+{%- comment -%}
+  "Figure 1": a small interactive picture of concept drift (the main topic of the research).
+  The drawing is made by assets/js/drift.js. Without JavaScript this block stays hidden.
+{%- endcomment -%}
+<section class="figure-section" aria-labelledby="fig-heading">
+  <div class="wrap">
+    <p class="eyebrow" id="fig-heading">My research in one picture</p>
+    <figure class="fig" id="drift" hidden>
+      <div class="fig__panel">
+        <div class="fig__plot">
+          <svg id="drift-plot" viewBox="0 0 800 440" role="img" aria-labelledby="drift-plot-title drift-plot-desc">
+            <title id="drift-plot-title">Two groups of points that drift over time</title>
+            <desc id="drift-plot-desc">Teal points are benign software and red points are malware. As time passes the two groups rotate. A static model keeps its old decision line and makes more mistakes. An adaptive model updates the line and stays accurate.</desc>
+          </svg>
+          <ul class="fig__legend">
+            <li><span class="dot dot--benign"></span>Benign</li>
+            <li><span class="dot dot--malware"></span>Malware</li>
+            <li><span class="dot dot--error"></span>Wrong prediction</li>
+            <li><span class="dot dot--ghost"></span>Start position</li>
+          </ul>
+        </div>
+
+        <div class="fig__side">
+          <div class="fig__score">
+            <p class="eyebrow">Accuracy now</p>
+            <p class="fig__big"><span id="drift-acc">100</span><small>%</small></p>
+            <p class="fig__errors" id="drift-err">0 of 140 points predicted wrongly</p>
+          </div>
+
+          <svg id="drift-chart" viewBox="0 0 300 170" role="img" aria-label="Line chart of accuracy over time. The static model loses accuracy. The adaptive model stays high."></svg>
+
+          <div class="fig__controls">
+            <div class="seg" role="group" aria-label="Choose a model">
+              <button type="button" class="seg__btn" data-mode="static" aria-pressed="true">Static model</button>
+              <button type="button" class="seg__btn" data-mode="adaptive" aria-pressed="false">Adaptive model</button>
+            </div>
+            <div class="fig__slider">
+              <label for="drift-time">Time</label>
+              <input type="range" id="drift-time" min="0" max="100" step="1" value="0">
+              <output for="drift-time" id="drift-time-out">0%</output>
+            </div>
+            <div class="fig__buttons">
+              <button type="button" class="btn-s" id="drift-play">{% include icon.html name="play" %}<span>Play</span></button>
+              <button type="button" class="btn-s" id="drift-reset">{% include icon.html name="reset" %}<span>Reset</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption>
+        <strong>Figure 1.</strong> <em>Concept drift, shown with made-up data.</em>
+        A detector learns to separate benign software from malware. As time passes, the data changes. A <em>static</em> model keeps its old decision line, so it makes more and more mistakes (circled points). An <em>adaptive</em> model updates the line from new data and stays accurate. This is the problem I study. Move the slider to see it.
+      </figcaption>
+    </figure>
+  </div>
+</section>

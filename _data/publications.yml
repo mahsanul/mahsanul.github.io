@@ -1,0 +1,132 @@
+# ---------------------------------------------------------------------------
+# PUBLICATIONS: one block per paper. Newest first is a good habit, but the
+# website sorts by "year" automatically.
+# Used on: Publications page, home page (selected papers), CV page.
+#
+# To add a paper: copy the TEMPLATE at the bottom of this file, paste it
+# above the last paper, and change the values. See WEBSITE_GUIDE.md,
+# section "Add a publication".
+#
+# Fields
+#   id          Short unique name, no spaces. Also the BibTeX key. Example: haque2027newpaper
+#   title       Full title.
+#   authors     One name per line. Your name is made bold automatically.
+#   year        Four digit year.
+#   type        conference | journal | preprint
+#   venue       Full name of the conference, journal, or preprint server.
+#   venue_short Short label for the stamp, for example "ICLR 2026".
+#   volume, number, pages   Optional. Used for journals.
+#   status      Optional note, for example "Under revision for ICSE" or "To appear".
+#   selected    true shows the paper on the home page. false hides it there.
+#   summary     Optional. One or two simple sentences about the paper.
+#   abstract    Optional. The full abstract. It appears in a "Abstract" drop-down.
+#   links       Optional buttons. Any of: paper, arxiv, code, data, slides,
+#               poster, video, project, scholar. Delete the ones you do not have.
+#   bibtex      Optional. Only if you want to write your own BibTeX text.
+#               If you leave it out, the website creates it from the fields above.
+# ---------------------------------------------------------------------------
+
+- id: haque2026lamda
+  title: "LAMDA: A Longitudinal Android Malware Benchmark for Concept Drift Analysis"
+  authors:
+    - Md Ahsanul Haque
+    - Ismail Hossain
+    - Md Mahmuduzzaman Kamol
+    - Md Jahangir Alam
+    - Suresh Kumar Amalapuram
+    - Sajedul Talukder
+    - Mohammad Saidur Rahman
+  year: 2026
+  type: conference
+  venue: "International Conference on Learning Representations (ICLR)"
+  venue_short: "ICLR 2026"
+  selected: true
+  summary: "A large benchmark of Android malware collected over a long period of time. It supports research on concept drift and continual learning, and makes it easier to repeat and compare drift-aware detectors."
+  links:
+    paper: "https://openreview.net/forum?id=1FnCrZtBNQ"
+    scholar: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zlIQ81wAAAAJ&citation_for_view=zlIQ81wAAAAJ:UeHWp8X0CEIC"
+
+- id: haque2025citadel
+  title: "CITADEL: A Semi-Supervised Active Learning Framework for Malware Detection Under Continuous Distribution Drift"
+  authors:
+    - Md Ahsanul Haque
+    - Md Mahmuduzzaman Kamol
+    - Suresh Kumar Amalapuram
+    - Vladik Kreinovich
+    - Mohammad Saidur Rahman
+  year: 2025
+  type: preprint
+  venue: "arXiv preprint arXiv:2511.11979"
+  venue_short: "arXiv 2025"
+  status: "Under revision for ICSE"
+  selected: true
+  summary: "A malware detection framework that learns from a small number of labels. It chooses which samples to label, so it reduces labeling cost while keeping detection accuracy as the data keeps changing."
+  links:
+    arxiv: "https://arxiv.org/abs/2511.11979"
+    scholar: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zlIQ81wAAAAJ&citation_for_view=zlIQ81wAAAAJ:zYLM7Y9cAGgC"
+
+- id: hossain2023smartagri
+  title: "Smart-Agri: A Smart Agricultural Management with IoT-ML-Blockchain Integrated Framework"
+  authors:
+    - Md Mamun Hossain
+    - Md Ashiqur Rahman
+    - Sudipto Chaki
+    - Humayra Ahmed
+    - Md Ahsanul Haque
+    - Iffat Tamanna
+    - Sweety Lima
+    - Jannatul Ferdous Most
+  year: 2023
+  type: journal
+  venue: "International Journal of Advanced Computer Science and Applications (IJACSA)"
+  venue_short: "IJACSA 2023"
+  volume: 14
+  number: 7
+  selected: false
+  summary: "A framework for smart agriculture management that combines IoT, machine learning, and blockchain."
+  links:
+    scholar: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zlIQ81wAAAAJ&citation_for_view=zlIQ81wAAAAJ:qjMakFHDy7sC"
+
+- id: das2019outlier
+  title: "A Machine Learning Approach to Protect Electronic Devices from Damage Using the Concept of Outlier"
+  authors:
+    - Sunanda Das
+    - Muhammad Sheikh Sadi
+    - Md Ahsanul Haque
+  year: 2019
+  type: conference
+  venue: "1st International Conference on Advances in Science, Engineering and Robotics Technology (ICASERT)"
+  venue_short: "ICASERT 2019"
+  selected: false
+  summary: "A machine learning method that uses outlier detection to protect electronic devices from damage."
+  links:
+    scholar: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zlIQ81wAAAAJ&citation_for_view=zlIQ81wAAAAJ:u5HHmVD_uO8C"
+
+# ---------------------------------------------------------------------------
+# TEMPLATE: copy everything from the "- id:" line to the last "links" line,
+# paste it ABOVE this comment block (keep the same spaces), and edit it.
+# Delete any line you do not need.
+#
+# - id: haque2027shortname
+#   title: "Full title of the paper"
+#   authors:
+#     - Md Ahsanul Haque
+#     - Second Author
+#   year: 2027
+#   type: conference            # conference | journal | preprint
+#   venue: "Full name of the venue"
+#   venue_short: "VENUE 2027"
+#   status: "To appear"         # optional
+#   selected: true              # true = show on home page
+#   summary: "One or two simple sentences about the paper."
+#   abstract: "Paste the abstract here."
+#   links:
+#     paper: "https://..."
+#     arxiv: "https://arxiv.org/abs/..."
+#     code: "https://github.com/..."
+#     data: "https://..."
+#     slides: "/files/my-slides.pdf"
+#     poster: "/files/my-poster.pdf"
+#     video: "https://..."
+#     scholar: "https://scholar.google.com/..."
+# ---------------------------------------------------------------------------

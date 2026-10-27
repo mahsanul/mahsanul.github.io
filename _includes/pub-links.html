@@ -1,0 +1,35 @@
+{%- comment -%}
+  Link buttons for one publication, in a fixed order. Missing links are skipped.
+  Needs: links (the "links:" block of the publication).
+{%- endcomment -%}
+{%- assign link_keys = "paper,arxiv,code,data,project,slides,poster,video,scholar" | split: "," -%}
+{%- for key in link_keys -%}
+  {%- assign u = include.links[key] -%}
+  {%- if u and u != "" -%}
+    {%- case key -%}
+      {%- when "paper" -%}{%- assign lbl = "Paper" -%}
+      {%- when "arxiv" -%}{%- assign lbl = "arXiv" -%}
+      {%- when "code" -%}{%- assign lbl = "Code" -%}
+      {%- when "data" -%}{%- assign lbl = "Data" -%}
+      {%- when "project" -%}{%- assign lbl = "Project" -%}
+      {%- when "slides" -%}{%- assign lbl = "Slides" -%}
+      {%- when "poster" -%}{%- assign lbl = "Poster" -%}
+      {%- when "video" -%}{%- assign lbl = "Video" -%}
+      {%- when "scholar" -%}{%- assign lbl = "Scholar" -%}
+    {%- endcase -%}
+    {%- capture href -%}{%- if u contains "://" -%}{{ u }}{%- else -%}{{ u | relative_url }}{%- endif -%}{%- endcapture -%}
+    <a class="btn-s" href="{{ href }}"{% if u contains "://" %} target="_blank" rel="noopener"{% endif %}>
+      {%- case key -%}
+        {%- when "arxiv" -%}{% include brand.html name="arxiv" %}
+        {%- when "scholar" -%}{% include brand.html name="scholar" %}
+        {%- when "paper" -%}{% include icon.html name="doc" %}
+        {%- when "code" -%}{% include icon.html name="code" %}
+        {%- when "data" -%}{% include icon.html name="data" %}
+        {%- when "slides" -%}{% include icon.html name="slides" %}
+        {%- when "poster" -%}{% include icon.html name="poster" %}
+        {%- when "video" -%}{% include icon.html name="video" %}
+        {%- else -%}{% include icon.html name="link" %}
+      {%- endcase -%}
+      <span>{{ lbl }}</span></a>
+  {%- endif -%}
+{%- endfor -%}

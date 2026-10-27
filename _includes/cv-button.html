@@ -1,0 +1,8 @@
+{%- comment -%}
+  A "Download CV" button. It appears only when the CV file (cv_file in _data/profile.yml) exists.
+  Options: class="..." (CSS classes), label="..." (button text).
+{%- endcomment -%}
+{%- assign cv_found = site.static_files | where: "path", site.data.profile.cv_file | first -%}
+{%- if cv_found -%}
+<a class="{{ include.class | default: 'btn btn--ghost' }}" href="{{ site.data.profile.cv_file | relative_url }}" download>{% include icon.html name="download" %}<span>{{ include.label | default: "Download CV" }}</span></a>
+{%- endif -%}

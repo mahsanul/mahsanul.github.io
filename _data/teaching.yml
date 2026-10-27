@@ -1,0 +1,41 @@
+# ---------------------------------------------------------------------------
+# TEACHING: teaching roles. Newest first.
+# Used on: Teaching page.
+#
+#   role      Your teaching title.
+#   org       University.
+#   location  City and country.
+#   period    Free text, for example "Aug 2023 – Present".
+#   courses   Optional list of course names. Remove or leave empty to hide.
+#   duties    What you did. One item per line.
+#
+# To add the names of the courses you assisted at UTEP, remove the "#" from the
+# "courses:" lines of the first role and write the course names.
+# ---------------------------------------------------------------------------
+
+- role: "Graduate Teaching Assistant"
+  org: "University of Texas at El Paso"
+  location: "El Paso, TX, USA"
+  period: "Aug 2023 – Present"
+  # courses:
+  #   - "Course name"
+  duties:
+    - "Taught and supported 3+ semesters of coursework."
+    - "Led laboratory sessions."
+    - "Developed assignments and exams, and graded coursework."
+    - "Held office hours for 50+ students each semester."
+
+- role: "Lecturer, Department of Computer Science & Engineering"
+  org: "Bangladesh University of Business & Technology"
+  location: "Dhaka, Bangladesh"
+  period: "Jul 2018 – Jul 2023"
+  courses:
+    - "Neural Networks"
+    - "Algorithms"
+    - "Data Structures"
+    - "Artificial Intelligence"
+    - "Operating Systems"
+    - "Computer Graphics"
+  duties:
+    - "Taught and designed the content of these courses over 5 years."
+    - "Did independent research together with a full teaching load."

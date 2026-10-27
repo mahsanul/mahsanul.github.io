@@ -1,0 +1,175 @@
+---
+layout: default
+permalink: /
+redirect_from:
+  - /about/
+  - /about.html
+drift: true
+body_class: is-home
+---
+{%- assign p = site.data.profile -%}
+{%- assign research = site.data.research -%}
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="kicker">{{ p.kicker }}</p>
+      <h1 class="hero__title">{{ p.headline | markdownify | remove: "<p>" | remove: "</p>" | strip }}</h1>
+      <p class="hero__lead">{{ p.lead }}</p>
+
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="{{ '/research/' | relative_url }}"><span>Explore my research</span>{% include icon.html name="arrow-right" %}</a>
+        <a class="btn btn--ghost" href="{{ '/publications/' | relative_url }}"><span>Publications</span></a>
+        {% include cv-button.html %}
+      </div>
+
+      {% include links.html %}
+    </div>
+
+    <figure class="hero__photo">
+      <div class="arch">
+        <img src="{{ p.photo | relative_url }}"
+             srcset="{{ p.photo_small | relative_url }} 480w, {{ p.photo | relative_url }} 800w"
+             sizes="(min-width: 960px) 380px, 78vw"
+             width="800" height="1000" alt="{{ p.photo_alt }}" fetchpriority="high">
+      </div>
+      <figcaption>{% include icon.html name="pin" %}<span>{{ p.photo_caption }}</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <dl class="facts">
+      <div class="facts__item">
+        <dt>Publications</dt>
+        <dd>{{ site.data.publications | size }}</dd>
+      </div>
+      {%- for f in p.facts -%}
+      <div class="facts__item">
+        <dt>{{ f.label }}</dt>
+        <dd>{{ f.value }}</dd>
+      </div>
+      {%- endfor -%}
+    </dl>
+  </div>
+</section>
+
+<!-- ============ Figure 1: concept drift ============ -->
+{% include drift-figure.html %}
+
+<!-- ============ About ============ -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="wrap section__grid">
+    <header class="section__label">
+      <span class="section__no">01</span>
+      <h2 class="section__title" id="about-title">About</h2>
+    </header>
+    <div class="section__body about">
+      <div class="prose prose--serif">
+        {{ p.bio | markdownify }}
+      </div>
+      <aside class="now" aria-labelledby="now-title">
+        <h3 class="eyebrow" id="now-title">Currently</h3>
+        <ul class="now__list">
+          {%- for item in p.now -%}<li>{{ item }}</li>{%- endfor -%}
+        </ul>
+        <h3 class="eyebrow">Interests</h3>
+        <ul class="tags">
+          {%- for t in p.interests -%}<li>{{ t }}</li>{%- endfor -%}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Research themes ============ -->
+<section class="section" id="research" aria-labelledby="research-title">
+  <div class="wrap section__grid">
+    <header class="section__label">
+      <span class="section__no">02</span>
+      <h2 class="section__title" id="research-title">Research</h2>
+    </header>
+    <div class="section__body">
+      <div class="themes">
+        {%- for t in research.themes -%}
+        <article class="theme">
+          <span class="theme__no">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
+          <h3 class="theme__title">{{ t.title }}</h3>
+          <p>{{ t.summary }}</p>
+        </article>
+        {%- endfor -%}
+      </div>
+      <p class="more"><a class="arrow-link" href="{{ '/research/' | relative_url }}"><span>Read more about my research</span>{% include icon.html name="arrow-right" %}</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Selected publications ============ -->
+<section class="section" id="publications" aria-labelledby="pubs-title">
+  <div class="wrap section__grid">
+    <header class="section__label">
+      <span class="section__no">03</span>
+      <h2 class="section__title" id="pubs-title">Selected publications</h2>
+    </header>
+    <div class="section__body">
+      {%- assign selected = site.data.publications | where: "selected", true -%}
+      <div class="pubs">
+        {%- for pub in selected -%}
+          {% include pub.html pub=pub compact=true %}
+        {%- endfor -%}
+      </div>
+      <p class="more"><a class="arrow-link" href="{{ '/publications/' | relative_url }}"><span>All publications</span>{% include icon.html name="arrow-right" %}</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ News and service ============ -->
+<section class="section" id="news" aria-labelledby="news-title">
+  <div class="wrap section__grid">
+    <header class="section__label">
+      <span class="section__no">04</span>
+      <h2 class="section__title" id="news-title">News and service</h2>
+    </header>
+    <div class="section__body split">
+      <div>
+        <h3 class="eyebrow">News</h3>
+        <ol class="news">
+          {%- for n in site.data.news limit: 5 -%}
+          <li class="news__item">
+            <time class="news__date">{{ n.date }}</time>
+            <p>{{ n.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}{% if n.link %} <a class="news__link" href="{{ n.link | relative_url }}">Read more</a>{% endif %}</p>
+          </li>
+          {%- endfor -%}
+        </ol>
+      </div>
+      <div>
+        <h3 class="eyebrow">Professional service</h3>
+        <ul class="service">
+          {%- for s in site.data.service -%}
+            {%- if s.featured -%}
+            <li><span class="service__role">{{ s.role }}</span><span class="service__venue">{{ s.short | default: s.venue }}</span><span class="service__year">{{ s.year }}</span></li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        <p class="more"><a class="arrow-link" href="{{ '/cv/#service' | relative_url }}"><span>Full CV</span>{% include icon.html name="arrow-right" %}</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Contact ============ -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="contact__panel">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 class="contact__title" id="contact-title">Let us talk about your research.</h2>
+        <p class="contact__text">{{ p.contact_text }}</p>
+      </div>
+      <div class="contact__actions">
+        <p class="contact__mail">{% include icon.html name="mail" %}{% include email.html show="address" %}</p>
+        {% include links.html no_email=true %}
+      </div>
+    </div>
+  </div>
+</section>
