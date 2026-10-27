@@ -660,9 +660,47 @@ Be careful to keep every `<section>` together with its `</section>`.
 At the top of the file there is a block called **BRAND COLORS**. Change the values there.
 All pages update. (Colors are written like `#B33712`. This is called a hex code.)
 
-The current colors are vermilion (red-orange) and teal on warm paper.
-Here are three other color sets. They were checked for good contrast. To use one, replace
-the matching lines in the BRAND COLORS block with the lines below.
+The current look is a clean near-white page with vermilion (red-orange) as the main color and teal as the second color.
+
+#### Change the page background (white, cool white, or cream)
+
+In the same block there are five lines under **PAGE BACKGROUND**. Replace them with one of
+these sets. All sets were checked for good contrast.
+
+**Cool white (current)**
+
+```css
+  --brand-page-light: #FAFBFC;
+  --brand-card-light: #FFFFFF;
+  --brand-panel-light: #F0F2F5;
+  --brand-line-light: #E2E6EB;
+  --brand-line-strong-light: #BFC6CF;
+```
+
+**Pure white**
+
+```css
+  --brand-page-light: #FFFFFF;
+  --brand-card-light: #FFFFFF;
+  --brand-panel-light: #F4F5F7;
+  --brand-line-light: #E5E7EB;
+  --brand-line-strong-light: #C2C8D0;
+```
+
+**Warm cream (the first version of the site)**
+
+```css
+  --brand-page-light: #F6F1E7;
+  --brand-card-light: #FBF8F1;
+  --brand-panel-light: #EDE6D6;
+  --brand-line-light: #D9D0BD;
+  --brand-line-strong-light: #B3A78F;
+```
+
+#### Change the main colors
+
+Here are three other color sets for the main colors. They were checked for good contrast. To use one, replace
+the matching lines in the BRAND COLORS block (the lines that start with `--brand-accent` and `--brand-second`) with the lines below.
 
 **Ultramarine blue and ochre**
 
@@ -716,13 +754,14 @@ the matching lines in the BRAND COLORS block with the lines below.
 ```
 
 **Rule for your own colors:** the main color must be dark enough to read as text on the
-light paper color, and the dark-theme color must be light enough to read on the dark
+light page color, and the dark-theme color must be light enough to read on the dark
 background. Text in small sizes needs a contrast ratio of at least 4.5. You can test two colors
 for free at <https://webaim.org/resources/contrastchecker/>.
 
 **Other things in the same block:**
 
-- `--paper` is the page background, `--ink` is the text color.
+- The text colors (`--ink`, `--ink-soft`, `--ink-faint`) are just below the BRAND COLORS block, in the part called "Light theme". Dark gray text on a white page is easy to read. Do not make the text lighter than `#586070`.
+- The color of the browser bar on phones is set by `theme-color` in `_includes/head.html` and in `manifest.webmanifest`. It is optional. If you change the page background, you can change it there too.
 - **Fonts:** the site uses *Fraunces* (headings), *IBM Plex Sans* (text), and *IBM Plex Mono* (small labels). The font files are in `assets/fonts/`, so the site does not load fonts from other websites. To use a different font, upload its `.woff2` file to `assets/fonts/`, add a `@font-face` line like the existing ones at the top of `site.css`, and change `--serif`, `--sans`, or `--mono`.
 - **Dark mode:** the site follows the visitor's system setting. There is a sun/moon button in the header. The dark colors are the `-dark` values.
 

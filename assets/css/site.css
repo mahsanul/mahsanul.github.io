@@ -40,17 +40,24 @@
      ====================================================================== */
   --brand-accent-light: #B33712;        /* vermilion */
   --brand-accent-light-hover: #8F2A0C;
-  --brand-accent-light-soft: #F1D9CB;   /* pale background tint */
-  --brand-accent-light-text: #FFF8F0;   /* text on top of the accent color */
+  --brand-accent-light-soft: #FBE4D9;   /* pale background tint */
+  --brand-accent-light-text: #FFFFFF;   /* text on top of the accent color */
   --brand-accent-dark: #FF8A5C;
   --brand-accent-dark-hover: #FFB08E;
   --brand-accent-dark-soft: #3A211A;
   --brand-accent-dark-text: #1A0D07;
 
   --brand-second-light: #0E5A5F;        /* teal */
-  --brand-second-light-soft: #D3E5E1;
+  --brand-second-light-soft: #DCEDEA;
   --brand-second-dark: #5CC9C1;
   --brand-second-dark-soft: #143B3C;
+
+  /* PAGE BACKGROUND, light theme (a clean, near-white look) */
+  --brand-page-light: #FAFBFC;          /* page background */
+  --brand-card-light: #FFFFFF;          /* cards and boxes */
+  --brand-panel-light: #F0F2F5;         /* quiet panels and the footer */
+  --brand-line-light: #E2E6EB;          /* thin lines */
+  --brand-line-strong-light: #BFC6CF;  /* stronger lines */
 
   /* ====================================================================== */
 
@@ -59,24 +66,24 @@
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* Light theme: warm paper and black ink */
-  --paper: #F6F1E7;          /* page background */
-  --paper-raised: #FBF8F1;   /* cards */
-  --paper-sunk: #EDE6D6;     /* quiet panels, footer */
-  --ink: #17191F;            /* main text */
-  --ink-soft: #454A55;       /* secondary text */
-  --ink-faint: #5A5E69;      /* small labels */
-  --rule: #D9D0BD;           /* thin lines */
-  --rule-strong: #B3A78F;    /* stronger lines */
+  /* Light theme: near-white background and dark ink */
+  --paper: var(--brand-page-light);
+  --paper-raised: var(--brand-card-light);
+  --paper-sunk: var(--brand-panel-light);
+  --ink: #14171C;            /* main text */
+  --ink-soft: #424853;       /* secondary text */
+  --ink-faint: #566070;      /* small labels */
+  --rule: var(--brand-line-light);
+  --rule-strong: var(--brand-line-strong-light);
   --accent: var(--brand-accent-light);
   --accent-hover: var(--brand-accent-light-hover);
   --accent-soft: var(--brand-accent-light-soft);
   --on-accent: var(--brand-accent-light-text);
   --teal: var(--brand-second-light);
   --teal-soft: var(--brand-second-light-soft);
-  --panel-bg: #17191F;       /* dark panel (contact section) */
-  --panel-fg: #F6F1E7;
-  --panel-fg-soft: #C9C3B6;
+  --panel-bg: #14171C;       /* dark panel (contact section) */
+  --panel-fg: #F7F8FA;
+  --panel-fg-soft: #C5CAD3;
   --panel-accent: var(--brand-accent-dark);
 
   /* Sizes */
@@ -487,7 +494,7 @@ input[type="range"]::-moz-range-thumb { width: 14px; height: 14px; border-radius
 .now__list li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 @media (min-width: 1040px) { .about { grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; } }
 
-.themes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+.themes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
 .theme { padding: 26px 26px 24px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); transition: background 0.2s; }
 .theme:hover { background: var(--paper-raised); }
 .theme__no { display: block; margin-bottom: 0.9rem; font: 500 0.78rem/1 var(--mono); letter-spacing: 0.12em; color: var(--accent); }
