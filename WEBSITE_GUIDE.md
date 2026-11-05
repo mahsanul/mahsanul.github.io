@@ -92,7 +92,7 @@ mahsanul.github.io/
 ├── README.md                  Short description of the repository
 │
 ├── _data/                     YOUR INFORMATION (edit these most)
-│   ├── profile.yml            Name, photo, bio, links, email, headline
+│   ├── profile.yml            Name, photo, bio, links, email, contact text
 │   ├── news.yml               News list
 │   ├── publications.yml       Papers and preprints
 │   ├── research.yml           Research areas and research projects
@@ -131,12 +131,12 @@ Use this table to find the right file fast.
 | I want to change ... | Edit this file |
 |---|---|
 | My name, role, university, location | `_data/profile.yml` |
-| The big headline and the short text under it | `_data/profile.yml` (`headline`, `lead`) |
-| The "About" text on the home page | `_data/profile.yml` (`bio`) |
-| The "Currently" box on the home page | `_data/profile.yml` (`now`) |
+| The short description for Google and link previews | `_data/profile.yml` (`lead`) |
+| The "About me" text on the home page | `_data/profile.yml` (`bio`, `interests`) |
+| The "Currently" list on the home page | `_data/profile.yml` (`now`) |
 | My email address | `_data/profile.yml` (`email`) |
 | Links to Google Scholar, ORCID, GitHub, LinkedIn | `_data/profile.yml` (`links`) |
-| The four facts under the headline | `_data/profile.yml` (`facts`) |
+| The contact section on the home page | `_data/profile.yml` (`contact_heading`, `contact_text`) |
 | My photo | upload to `images/`, then `_data/profile.yml` (`photo`) |
 | News | `_data/news.yml` |
 | Publications | `_data/publications.yml` |
@@ -259,7 +259,7 @@ Some fields can use **Markdown**. This is a simple way to format text.
 | `*italic*` | *italic* |
 | `[Google](https://google.com)` | a link |
 
-Markdown works in these places only: `bio`, `headline` (only `*stars*` for the highlighted word),
+Markdown works in these places only: `bio`,
 `news` text, the `intro` of `research.yml`, and the `bullets` in `experience.yml`.
 In all other fields, write plain text.
 
@@ -279,17 +279,15 @@ Open it. Every line has a short comment that explains it. The important fields:
 | `role` | Your role, for example `Ph.D. Student in Computer Science` |
 | `affiliation`, `affiliation_url` | Your university name and its website |
 | `location` | City and country |
-| `kicker` | The small red line above the headline |
-| `headline` | The big sentence on the home page. Put `*stars*` around one word to highlight it. |
-| `lead` | The short text under the headline |
-| `bio` | The "About" section (Markdown, many paragraphs) |
-| `now` | The "Currently" list on the home page. Update it often. |
-| `interests` | The small tags in the "About" section |
-| `facts` | The facts under the headline (value and label) |
+| `lead` | One or two sentences about you. It is **not shown on the page**. Google and link previews (LinkedIn, Slack, email) use it. |
+| `bio` | The "About me" text at the top of the home page (Markdown, many paragraphs) |
+| `interests` | Your research interests. They are shown as one line under the About me text. |
+| `now` | The "Currently" list under the About me text. Update it often. |
+| `photo`, `photo_small`, `photo_alt` | Your photo next to your name (see [6.2](#62-change-my-photo)) |
 | `email` | Your email address. It is hidden from simple spam robots. |
 | `links` | Your Google Scholar, ORCID, GitHub, and LinkedIn links |
 | `cv_summary` | The short summary at the top of the CV page |
-| `contact_text` | The text in the dark contact box at the bottom of the home page |
+| `contact_heading`, `contact_text` | The sentence and the text in the Contact section at the bottom of the home page |
 
 **Name matching rule:** In the publication list, your name is made bold by comparing it with
 `name` in this file. Write your name in `publications.yml` exactly the same way as `name` here.
@@ -643,24 +641,32 @@ The `<div class="prose" markdown="1">` line and the `</div>` line make the text 
 
 **File:** `index.html`
 
-The file has clear comments such as `<!-- ============ About ============ -->`. Each section
+The home page has these sections, in this order:
+
+1. **About me** (photo, name, links, bio, research interests, "Currently")
+2. **Research** (your research areas, from `research.yml`)
+3. **Selected publications** (papers with `selected: true`)
+4. **News** (the first 5 items of `news.yml`)
+5. **Education and service** (from `education.yml` and `service.yml`)
+6. **My research in one picture** (the concept drift figure)
+7. **Contact**
+
+The file has clear comments such as `<!-- ============ News ============ -->`. Each section
 starts at its comment and ends at its `</section>` line.
 
 - **Remove a section:** delete everything from its comment to its `</section>` line.
-- **Move a section:** cut the same block and paste it somewhere else.
-- **Section numbers** (`01`, `02`, ...) are written in the file. After you move or remove a section, change the numbers by hand.
-- The section names are in the `<h2 class="section__title">` lines.
-
-Be careful to keep every `<section>` together with its `</section>`.
+- **Move a section:** cut the same block and paste it somewhere else. For example, to put the figure right after About me, move the whole "My research in one picture" block.
+- The section names are in the `<h2 class="section__title">` lines. You can change the words.
+- Be careful to keep every `<section>` together with its `</section>`.
 
 ### 6.16 Change colors and fonts
 
 **File:** `assets/css/site.css`
 
 At the top of the file there is a block called **BRAND COLORS**. Change the values there.
-All pages update. (Colors are written like `#B33712`. This is called a hex code.)
+All pages update. (Colors are written like `#1F5AA6`. This is called a hex code.)
 
-The current look is a clean near-white page with vermilion (red-orange) as the main color and teal as the second color.
+The current look is a clean near-white page with a calm blue as the main color and teal as the second color.
 
 #### Change the page background (white, cool white, or cream)
 
@@ -699,27 +705,28 @@ these sets. All sets were checked for good contrast.
 
 #### Change the main colors
 
-Here are three other color sets for the main colors. They were checked for good contrast. To use one, replace
-the matching lines in the BRAND COLORS block (the lines that start with `--brand-accent` and `--brand-second`) with the lines below.
+The main colors are the lines that start with `--brand-accent` and `--brand-second`.
+Here are other color sets. They were checked for good contrast. To use one, replace those
+lines in the BRAND COLORS block with the lines below.
 
-**Ultramarine blue and ochre**
+**Calm blue and teal (current)**
 
 ```css
-  --brand-accent-light: #2848A8;
-  --brand-accent-light-hover: #1D3680;
-  --brand-accent-light-soft: #DCE3F5;
+  --brand-accent-light: #1F5AA6;
+  --brand-accent-light-hover: #164380;
+  --brand-accent-light-soft: #E6EEF8;
   --brand-accent-light-text: #FFFFFF;
-  --brand-accent-dark: #8FA8FF;
-  --brand-accent-dark-hover: #B7C6FF;
-  --brand-accent-dark-soft: #1B2447;
-  --brand-accent-dark-text: #0D1330;
-  --brand-second-light: #8A5300;
-  --brand-second-light-soft: #F1E2C2;
-  --brand-second-dark: #E8B04B;
-  --brand-second-dark-soft: #3A2A0C;
+  --brand-accent-dark: #8DB7F5;
+  --brand-accent-dark-hover: #B5D0FA;
+  --brand-accent-dark-soft: #15243B;
+  --brand-accent-dark-text: #0A1426;
+  --brand-second-light: #0F766E;
+  --brand-second-light-soft: #DDF1EE;
+  --brand-second-dark: #5FD3C6;
+  --brand-second-dark-soft: #11393A;
 ```
 
-**Forest green and rose**
+**Forest green and teal**
 
 ```css
   --brand-accent-light: #1B6B3A;
@@ -730,10 +737,10 @@ the matching lines in the BRAND COLORS block (the lines that start with `--brand
   --brand-accent-dark-hover: #9BE4B7;
   --brand-accent-dark-soft: #14301F;
   --brand-accent-dark-text: #06180D;
-  --brand-second-light: #A02A55;
-  --brand-second-light-soft: #F3D9E2;
-  --brand-second-dark: #F08AAE;
-  --brand-second-dark-soft: #3A1626;
+  --brand-second-light: #0F766E;
+  --brand-second-light-soft: #DDF1EE;
+  --brand-second-dark: #5FD3C6;
+  --brand-second-dark-soft: #11393A;
 ```
 
 **Plum and teal**
@@ -747,11 +754,30 @@ the matching lines in the BRAND COLORS block (the lines that start with `--brand
   --brand-accent-dark-hover: #F0BDE6;
   --brand-accent-dark-soft: #341A30;
   --brand-accent-dark-text: #1E0E1B;
-  --brand-second-light: #0E5A5F;
-  --brand-second-light-soft: #D3E5E1;
-  --brand-second-dark: #5CC9C1;
-  --brand-second-dark-soft: #143B3C;
+  --brand-second-light: #0F766E;
+  --brand-second-light-soft: #DDF1EE;
+  --brand-second-dark: #5FD3C6;
+  --brand-second-dark-soft: #11393A;
 ```
+
+**Vermilion (red-orange) and teal (the first version of the site)**
+
+```css
+  --brand-accent-light: #B33712;
+  --brand-accent-light-hover: #8F2A0C;
+  --brand-accent-light-soft: #FBE4D9;
+  --brand-accent-light-text: #FFFFFF;
+  --brand-accent-dark: #FF8A5C;
+  --brand-accent-dark-hover: #FFB08E;
+  --brand-accent-dark-soft: #3A211A;
+  --brand-accent-dark-text: #1A0D07;
+  --brand-second-light: #0F766E;
+  --brand-second-light-soft: #DDF1EE;
+  --brand-second-dark: #5FD3C6;
+  --brand-second-dark-soft: #11393A;
+```
+
+The three `--brand-malware` lines at the end of the block set the red color of the malware points in Figure 1 (squares). Benign points (circles) use the second color. Keep them as they are, so the two groups stay easy to tell apart.
 
 **Rule for your own colors:** the main color must be dark enough to read as text on the
 light page color, and the dark-theme color must be light enough to read on the dark
@@ -772,7 +798,9 @@ It shows made-up data. A static model loses accuracy as the data rotates. An ada
 
 - **Change the picture:** open `assets/js/drift.js`. At the top there is a **Settings** block with numbers (`PER_CLASS`, `DIST`, `SPREAD`, `MAX_ANGLE`, `DURATION`, `SEED`). Change one number at a time. Change `SEED` to get a different random picture.
 - **Change the caption or labels:** edit `_includes/drift-figure.html`.
-- **Remove the figure:** open `index.html` and delete the line `{% include drift-figure.html %}` (and the comment line above it).
+- **Remove the figure:** open `index.html` and delete the whole block that starts with the comment `<!-- ============ My research in one picture (Figure 1) ============ -->` and ends with its `</section>` line.
+- **Move the figure:** cut the same block and paste it between two other sections. It is now near the bottom of the page, before Contact.
+- In the figure, **benign software** is drawn as **teal circles** and **malware** as **red squares**. A circled point is a wrong prediction.
 
 ### 6.18 Change the icon and the sharing image
 
@@ -806,10 +834,10 @@ words such as `UTEP` or `Ph.D.` and find every place that needs a change.
 
 | Step | File | What to do |
 |---|---|---|
-| 1 | `_data/profile.yml` | Change `role`, `affiliation`, `affiliation_url`, `location`, and `kicker` to your new position. |
-| 2 | `_data/profile.yml` | Rewrite `lead`, `bio`, `cv_summary`, and `now`. Remove words such as "Ph.D. student". |
+| 1 | `_data/profile.yml` | Change `role`, `affiliation`, `affiliation_url`, and `location` to your new position. |
+| 2 | `_data/profile.yml` | Rewrite `lead`, `bio`, `cv_summary`, `interests`, and `now`. Remove words such as "Ph.D. student". |
 | 3 | `_data/profile.yml` | Change `email` to an address that stays valid (a university address may stop working after you leave). |
-| 4 | `_data/profile.yml` | Update `facts` and `contact_text`. |
+| 4 | `_data/profile.yml` | Update `contact_heading` and `contact_text`. |
 | 5 | `_data/education.yml` | Change `end: "Expected Dec 2027"` to the real date. Add your thesis title and advisor (remove the `#`). |
 | 6 | `_data/experience.yml` | Change `end: "Present"` of old jobs to the real date. Add your new job at the top. |
 | 7 | `_data/teaching.yml` | Update the teaching roles. |
@@ -931,7 +959,7 @@ Publications page use them.
 
 | Page | Address | Content comes from |
 |---|---|---|
-| Home | `/` | `index.html`, `profile.yml`, `research.yml`, `publications.yml` (selected), `news.yml`, `service.yml` |
+| Home | `/` | `index.html`, `profile.yml`, `research.yml`, `publications.yml` (selected), `news.yml`, `education.yml`, `service.yml` |
 | Research | `/research/` | `research.yml` |
 | Publications | `/publications/` | `publications.yml` |
 | Teaching | `/teaching/` | `teaching.yml` |

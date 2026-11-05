@@ -1,8 +1,8 @@
 /* ==========================================================================
    Figure 1 on the home page: an illustration of concept drift.
 
-   Two groups of points (benign software and malware) rotate slowly as time
-   passes. A "static" model keeps the decision line it learned at the start,
+   Two groups of points (benign software as circles, malware as squares) rotate
+   slowly as time passes. A "static" model keeps the decision line it learned at the start,
    so it makes more mistakes. An "adaptive" model re-learns the line from the
    current data, so it stays accurate. All data are made up (random, but with
    a fixed seed, so the picture is the same every time).
@@ -131,8 +131,11 @@
   var ghostB = el('circle', { 'class': 'ghost ghost--malware', cx: CX + DIST, cy: CY, r: SPREAD * 2.1 }, plot);
   void ghostA; void ghostB;
 
+  // Benign software = circles, malware = squares (so the groups differ by shape, not only by color)
+  var HALF = 4.8;
   var dots = points.map(function (p) {
-    return el('circle', { 'class': 'pt ' + (p.cls === 1 ? 'pt--malware' : 'pt--benign'), r: 5.2, cx: CX, cy: CY }, plot);
+    if (p.cls === 1) return el('rect', { 'class': 'pt pt--malware', x: CX - HALF, y: CY - HALF, width: HALF * 2, height: HALF * 2, rx: 1.4 }, plot);
+    return el('circle', { 'class': 'pt pt--benign', r: 5.4, cx: CX, cy: CY }, plot);
   });
 
   var labelText = el('text', { 'class': 'boundary-label', 'text-anchor': 'middle' }, plot);
@@ -175,8 +178,13 @@
     var res = score(model, pos);
 
     for (var k = 0; k < COUNT; k++) {
-      dots[k].setAttribute('cx', pos.xs[k].toFixed(1));
-      dots[k].setAttribute('cy', pos.ys[k].toFixed(1));
+      if (points[k].cls === 1) {            // squares are placed by their corner
+        dots[k].setAttribute('x', (pos.xs[k] - HALF).toFixed(1));
+        dots[k].setAttribute('y', (pos.ys[k] - HALF).toFixed(1));
+      } else {
+        dots[k].setAttribute('cx', pos.xs[k].toFixed(1));
+        dots[k].setAttribute('cy', pos.ys[k].toFixed(1));
+      }
       dots[k].classList.toggle('pt--err', res.wrong[k]);
     }
 
@@ -249,6 +257,8 @@
   });
 
   figure.hidden = false;
+  var section = figure.closest('[data-drift-section]');   // the heading around the figure
+  if (section) section.hidden = false;
   update();
 
   /* Play once when the figure becomes visible (not when the visitor prefers less motion) */

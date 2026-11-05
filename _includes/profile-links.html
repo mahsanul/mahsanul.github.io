@@ -1,0 +1,16 @@
+{%- comment -%}
+  Your links as a simple list: email, the CV (when the PDF exists), and the links from _data/profile.yml.
+  Options: inline=true (one line), no_email=true (leave out the email link).
+{%- endcomment -%}
+{%- assign cv_found = site.static_files | where: "path", site.data.profile.cv_file | first -%}
+<ul class="plinks{% if include.inline %} plinks--inline{% endif %}">
+  {%- unless include.no_email -%}
+  <li>{% include icon.html name="mail" %}{% include email.html label="Email" %}</li>
+  {%- endunless -%}
+  {%- if cv_found -%}
+  <li><a href="{{ site.data.profile.cv_file | relative_url }}" download>{% include brand.html name="cv" %}<span>CV (PDF)</span></a></li>
+  {%- endif -%}
+  {%- for l in site.data.profile.links -%}
+  <li><a href="{{ l.url }}" target="_blank" rel="noopener">{% include brand.html name=l.icon %}<span>{{ l.label }}</span></a></li>
+  {%- endfor -%}
+</ul>

@@ -9,7 +9,7 @@
 {%- if page.description -%}
   {%- assign seo_desc = page.description -%}
 {%- elsif page.url == "/" -%}
-  {%- assign seo_desc = site.description -%}
+  {%- assign seo_desc = p.lead | default: site.description -%}
 {%- elsif page.lead -%}
   {%- assign seo_desc = page.lead -%}
 {%- elsif page.excerpt -%}
